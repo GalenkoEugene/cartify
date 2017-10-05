@@ -11,7 +11,7 @@ class CreateCartifyOrders < ActiveRecord::Migration[5.1]
       t.references :delivery,
                     foreign_key: { to_table: :cartify_deliveries }
       t.references :credit_card,
-                    foreign_key: { to_table: :cartify_cards }
+                    foreign_key: { to_table: :cartify_credit_cards }
 
       t.timestamps
     end

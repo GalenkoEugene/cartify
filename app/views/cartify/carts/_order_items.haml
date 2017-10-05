@@ -2,16 +2,6 @@
   %tr
     %td
       .general-img-wrap-table
-        = link_to book_path(order_item.book) do
-          = image_tag img_of(order_item.book), alt: 'design-book', class: 'cart-img-shadow pull-left'
-    %td
-      = link_to book_path(order_item.book), class: 'text-as-link' do
-        %p.title= order_item.book.title
-    %td
-      %span.font-16.in-gold-500= number_to_currency(order_item.book.price)
-    = render 'cartify/carts/quantity', order_item: order_item
-    %td
-      %span.font-16.in-gold-500= number_to_currency(order_item.total_price)
-    %td
-      = button_to order_item_path(order_item), { data: { confirm: "Are you sure you wish to delete the book '#{order_item.book.title}' from your cart?" }, method: :delete, remote: true, class: "close general-cart-close", 'aria-label': 'Close' } do
-        %span{'aria-hidden': "true"} &times;
+        %h1 Here you can display your "Product"
+        %p= order_item.product.name
+        %p= order_item.product.price

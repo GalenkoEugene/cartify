@@ -5,7 +5,7 @@ module Cartify
     # load_and_authorize_resource
 
     def create
-      current_order.save unless current_order.persisted?
+      current_order.save #unless current_order.persisted?
       @order_item = current_order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
       session[:order_id] = current_order.id if update_quantity.save
     end

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.1.4"
   s.add_dependency "virtus", "~> 1.0.5"
   s.add_dependency "wicked", "~> 1.3.2"
+  s.add_dependency "jquery-rails", "~> 4.3.1"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry-byebug", "~> 3.5.0"
