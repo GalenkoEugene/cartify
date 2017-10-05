@@ -1,0 +1,8 @@
+- @order_items.each do |order_item|
+  .general-cart-item.divider-lg-bottom
+    %table.table
+      %tr
+        %td
+          %h1 Here you can display your "Product"
+          %p= order_item.product.name
+          %p= order_item.product.price
