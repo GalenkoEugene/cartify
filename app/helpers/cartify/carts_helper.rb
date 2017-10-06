@@ -6,7 +6,7 @@ module Cartify
 
     def shop_icon_quantity
       qty = current_order.order_items.reload.collect(&:quantity).compact.sum
-      qty_span = qty.zero? ? 0 : "<span class='shop-quantity'>#{qty} #{Time.now}</span>"
+      qty_span = qty.zero? ? 0 : "<span class='shop-quantity'>#{qty}</span>"
       "<span class='shop-icon'>#{qty_span}</span>".html_safe
     end
   end

@@ -11,10 +11,10 @@ Usage:
     rake cartify:install:migrations
 
   Define associations in your "User" model:
-    has_many :addresses, class_name: Cartify::Address
+    has_many :addresses, class_name: 'Cartify::Address', foreign_key: :user_id
     has_many :orders, class_name: 'Cartify::Order', foreign_key: :user_id
-    has_one :billing, class_name: Cartify::Billing
-    has_one :shipping, class_name: Cartify::Shipping
+    has_one :billing, class_name: 'Cartify::Billing', foreign_key: :user_id
+    has_one :shipping, class_name: 'Cartify::Shipping', foreign_key: :user_id
 
   Include helpers from engine:
     # ../app/controllers/application_controller.rb

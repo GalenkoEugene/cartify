@@ -16,9 +16,9 @@ module Cartify
         Rails.application.config.paths['db/migrate'] << expanded_path
       end
 
-      Rails.application.routes.append do
-        mount Cartify::Engine => '/'
-      end
+      # Rails.application.routes.append do
+      #   mount Cartify::Engine => '/', as: 'cartify'
+      # end
     end
 
     initializer :inject_helpers do |app|
