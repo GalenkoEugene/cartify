@@ -1,6 +1,11 @@
 module Cartify
   class Engine < ::Rails::Engine
     require 'jquery-rails'
+    require 'country_select'
+    require 'jquery_mask_rails'
+    require 'wicked'
+    require 'virtus'
+    require 'draper'
     isolate_namespace Cartify
 
     config.generators do |g|
@@ -23,10 +28,8 @@ module Cartify
 
     initializer :inject_helpers do |app|
       ActiveSupport.on_load :action_controller do
-        ::ActionController::Base.send(:helper, Cartify::Engine.helpers)
-        ::ApplicationController.class_eval do
-          include Cartify::CurrenSession
-        end
+        ::ApplicationController.send(:helper, Cartify::Engine.helpers)
+        ::ApplicationController.send(:include, Cartify::CurrentSession)
       end
     end
   end

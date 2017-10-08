@@ -3,8 +3,8 @@ module Cartify
     belongs_to :user, class_name: Cartify.user_class.to_s, optional: true
     belongs_to :order, optional: true
 
-    scope :shipping, -> { where(type: 'Shipping') }
-    scope :billing, -> { where(type: 'Billing') }
+    scope :shipping, -> { where(type: 'Cartify::Shipping') }
+    scope :billing, -> { where(type: 'Cartify::Billing') }
 
     validates :first_name, :last_name, :address, :city, :zip, :country, :phone, presence: true
     validates_length_of :first_name, :last_name, :address, :city, :country, maximum: 49

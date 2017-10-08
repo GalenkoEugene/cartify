@@ -1,7 +1,7 @@
 %main.container.general-main-wrap
   %h1.general-title-margin= t('cart.cart')
   .visible-xs
-    = render 'cartify/carts/xs_order_items', locals: @order_items
+    / = render 'cartify/carts/xs_order_items', locals: @order_items
   .hidden-xs
     %table.table.table-hover
       %thead
@@ -16,7 +16,7 @@
           %th.col-total
             %span.in-grey-600= t('cart.subtotal')
           %th.col-close
-      = render 'cartify/carts/order_items', locals: @order_items
+      / = render 'cartify/carts/order_items', locals: @order_items
   = render 'cartify/carts/order_summary'
   .text-center
-    / = link_to t('cart.checkout'), checkout_index_path, class: 'btn btn-default mb-20'
+    = link_to t('cart.checkout'), checkout_index_path, class: 'btn btn-default mb-20'

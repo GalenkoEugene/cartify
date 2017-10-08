@@ -1,0 +1,28 @@
+%main.container.general-main-wrap
+  =link_to orders_path, class: 'general-back-link' do
+    %i.fa.fa-long-arrow-left.mr-15
+    = t('button.back_to_orders')
+  .row.mb-20
+    .col-sm-3
+      %h3.general-subtitle= t('settings.shipping')
+      = render 'cartify/checkout/partials/addresses_short', address: @order.shipping, step: :complete
+    .col-sm-3
+      %h3.general-subtitle= t('settings.billing')
+      = render 'cartify/checkout/partials/addresses_short', address: @order.billing, step: :complete
+    .col-sm-3
+      %h3.general-subtitle= t('confirm.shipments')
+      %p.general-address
+        = @order.delivery.name
+        %br
+        = @order.delivery.duration
+    .col-sm-3
+      %h3.general-subtitle= t('confirm.payment_info')
+      %p.general-address
+        = @order.secret_card_number
+        %br
+        = @order.credit_card.mm_yy
+  = render 'cartify/checkout/partials/list_of_items', current_order: @order
+  %div.text-center.general-text-right
+    %p.in-gold-500.font-18= t('cart.summary')
+    %table.general-summary-table.general-summary-table-right.general-text-right
+      = render 'cartify/shared/checkout_summary_numbers', current_order: @order, step: :comfirm

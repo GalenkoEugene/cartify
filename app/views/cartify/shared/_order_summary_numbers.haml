@@ -1,0 +1,15 @@
+%tr
+  %td
+    %p.font-16= t('cart.subtotal')+':'
+  %td
+    %p.font-16= number_to_currency current_order.subtotal
+%tr
+  %td
+    %p.font-16= t('cart.coupon')+':'
+  %td
+    %p.font-16= number_to_currency current_order.discount
+%tr
+  %td
+    %strong.font-16= t('cart.total')+':'
+  %td
+    %strong.font-16= number_to_currency current_order.total || '--'

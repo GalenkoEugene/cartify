@@ -4,4 +4,14 @@ class InitializerGenerator < Rails::Generators::Base
   def copy_initializer_file
     copy_file "initializer.rb", "config/initializers/cartify.rb"
   end
+
+  def install_js
+    inject_into_file 'app/assets/javascripts/application.js',
+      before: "//= require_tree .\n" do <<-'JS'
+//= require jquery
+//= require rails-ujs
+//= require cartify/application.js
+      JS
+    end
+  end
 end

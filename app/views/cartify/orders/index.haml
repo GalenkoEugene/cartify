@@ -1,0 +1,21 @@
+%main.container.general-main-wrap
+  %h1.mt-0.mb-25= t('orders.my_orders')
+  %p.lead.small.mb-10.visible-xs= t('page.book.index.sort_by')
+  .dropdowns.dropdown.general-order-dropdown
+    = render 'cartify/orders/filters'
+  .visible-xs
+    = render 'cartify/orders/orders-xs'
+  .hidden-xs.mb-res-50
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+            %span.in-grey-600= t('order.number')
+          %th
+            %span.in-grey-600= t('order.complited_at')
+          %th
+            %span.in-grey-600= t('order.statuss')
+          %th
+            %span.in-grey-600= t('order.total')
+      %tbody
+        = render 'cartify/orders/orders-lg'

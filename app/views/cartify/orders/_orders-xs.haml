@@ -1,0 +1,23 @@
+- @orders.each do |order|
+  .general-cart-item.divider-lg-bottom.pt-0
+    %table.table
+      %tr
+        %td.col-half
+          %span.in-grey-600= t('order.number')
+        %td.col-half
+          %span.general-order-number= order.number
+      %tr
+        %td
+          %span.in-grey-600= t('order.complited_at')
+        %td
+          %span.in-grey-900.font-16.fw-300= order.complited_at
+      %tr
+        %td
+          %span.in-grey-600= t('order.statuss')
+        %td
+          %span.font-16.in-grey-900.fw-300= order.status
+      %tr
+        %td
+          %span.in-grey-600= t('order.total')
+        %td
+          %strong.font-16= number_to_currency order.total

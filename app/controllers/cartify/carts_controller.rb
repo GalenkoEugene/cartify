@@ -2,8 +2,6 @@ require_dependency "cartify/application_controller"
 
 module Cartify
   class CartsController < ApplicationController
-    # respond_to :html
-
     def show
       @order_items = current_order.order_items
     end
@@ -16,7 +14,7 @@ module Cartify
     private
 
     def coupon
-      @coupon ||= Coupon.find_by_name(params[:name])
+      @coupon ||= Cartify::Coupon.find_by_name(params[:name])
     end
   end
 end
