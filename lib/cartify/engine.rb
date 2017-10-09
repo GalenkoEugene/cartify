@@ -6,6 +6,7 @@ module Cartify
     require 'wicked'
     require 'virtus'
     require 'draper'
+    require 'devise'
     isolate_namespace Cartify
 
     config.generators do |g|

@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  mount Cartify::Engine => "/cartify"
+  root to: 'products#index'
+  devise_for :customers
+  resources :products
+  mount Cartify::Engine, at: '/'
 end

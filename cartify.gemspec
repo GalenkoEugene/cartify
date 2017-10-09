@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'draper', '~> 3.0.0'
   s.add_dependency 'jquery_mask_rails', '~> 0.1.0'
   s.add_dependency 'haml-rails', '~> 1.0.0'
+  s.add_dependency 'devise', '~> 4.3.0'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'pry-byebug', '~> 3.5.0'
