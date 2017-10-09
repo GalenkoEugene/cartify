@@ -9,7 +9,6 @@ class InitializerGenerator < Rails::Generators::Base
     inject_into_file 'app/assets/javascripts/application.js',
       before: "//= require_tree .\n" do <<-'JS'
 //= require jquery
-//= require rails-ujs
 //= require cartify/application.js
       JS
     end

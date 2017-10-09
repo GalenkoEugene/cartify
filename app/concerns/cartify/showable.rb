@@ -46,7 +46,7 @@ module Cartify::Showable
 
     def signed_in?
       return unless respond_to?("#{Cartify.user_class}SignedIn?".underscore)
-      send "#{Cartify.user_class}SignedIn?".underscore
+      public_send "#{Cartify.user_class}SignedIn?".underscore
     end
   end
 end

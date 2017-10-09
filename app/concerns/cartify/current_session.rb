@@ -23,7 +23,7 @@ module Cartify::CurrentSession
 
   def cartify_current_user
     return unless respond_to?(Cartify.current_user)
-    @cartify_current_user ||= send(Cartify.current_user)
+    @cartify_current_user ||= public_send(Cartify.current_user)
   end
 
   def cartify_set_current_user
@@ -32,7 +32,7 @@ module Cartify::CurrentSession
 
   def cartify_authenticate_user!
     return unless respond_to?("Authenticate#{Cartify.user_class}!".underscore)
-    send "Authenticate#{Cartify.user_class}!".underscore
+    public_send "Authenticate#{Cartify.user_class}!".underscore
   end
 
   private

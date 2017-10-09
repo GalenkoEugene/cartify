@@ -1,5 +1,5 @@
 .visible-xs
-  - current_order.order_items.each_with_index do |item, i|
+  - current_order.order_items.each do |item|
     .general-cart-item.divider-lg
       .general-img-wrap-table
         = link_to main_app.book_path(item.product) do
