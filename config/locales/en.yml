@@ -126,6 +126,8 @@ en:
     quick_register: 'Quick Register'
     quick_description: "You'll be able to create password later"
     continue: 'Continue to Checkout'
+    add_to_cart: 'Add to cart'
+    cart: 'Cart'
 
   validation:
     cart_number: 'Please enter a valid credit card number'

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  ADDRESSES_TYPE = %w[Cartify::Billing Cartify::Shipping]
+  ADDRESSES_TYPE = %w[Cartify::Billing Cartify::Shipping].freeze
 
   factory :address, class: 'Cartify::Address' do
     type { ADDRESSES_TYPE.sample }
@@ -10,7 +10,5 @@ FactoryGirl.define do
     zip { FFaker::AddressUS.zip_code }
     country { FFaker::AddressUS.country.gsub(/[\W_]/, '') }
     phone '+12345678910'
-    # user
-    # order
   end
 end

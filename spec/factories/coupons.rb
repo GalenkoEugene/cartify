@@ -6,8 +6,8 @@ FactoryGirl.define do
     end
 
     before(:create) do |coupon, evaluator|
-      coupon.value= evaluator.value
-      coupon.name= evaluator.name
+      coupon.value = evaluator.value
+      coupon.name = evaluator.name
     end
   end
 end

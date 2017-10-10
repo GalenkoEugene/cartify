@@ -13,7 +13,7 @@ module Cartify
     default_scope { order(product_id: :asc) }
 
     def unit_price
-      return  self[:unit_price] if persisted?
+      return self[:unit_price] if persisted?
       product.price
     end
 

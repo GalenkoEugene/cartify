@@ -3,7 +3,6 @@ module Cartify::Showable
 
   included do
     private
-    before_action :setup_wizard
 
     def show_login
       return jump_to(next_step) if signed_in?

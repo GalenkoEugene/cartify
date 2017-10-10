@@ -1,4 +1,4 @@
-require_dependency "cartify/application_controller"
+require_dependency 'cartify/application_controller'
 
 module Cartify
   class CartsController < ApplicationController

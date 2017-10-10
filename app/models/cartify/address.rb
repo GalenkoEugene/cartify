@@ -17,7 +17,7 @@ module Cartify
     before_validation :clear_mask
 
     def clear_mask
-      self.phone&.gsub!(/[-\s()]/, '')
+      phone&.gsub!(/[-\s()]/, '')
     end
   end
 end

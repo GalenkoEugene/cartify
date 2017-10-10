@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+require 'capybara-webkit'
 require 'capybara/webkit/matchers'
 require 'transactional_capybara/rspec'
 require 'factory_girl_rails'

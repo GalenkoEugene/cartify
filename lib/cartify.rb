@@ -1,4 +1,4 @@
-require "cartify/engine"
+require 'cartify/engine'
 
 module Cartify
   mattr_accessor :product_class

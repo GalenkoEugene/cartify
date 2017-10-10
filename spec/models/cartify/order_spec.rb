@@ -11,7 +11,7 @@ module Cartify
 
     it 'set order status before create' do
       subject.user_id = FactoryGirl.create(:customer).id
-      subject.order_status_id= FactoryGirl.create(:order_status).id
+      subject.order_status_id = FactoryGirl.create(:order_status).id
       expect(subject).to receive :set_order_status
       subject.save!
     end
@@ -41,11 +41,11 @@ module Cartify
 
         let(:statuses) { Cartify::Order.where_status(:delivered).map(&:order_status).map(&:name) }
 
-        it 'contain only one type of statuses'do
+        it 'contain only one type of statuses' do
           expect(statuses.uniq.size).to eq 1
         end
 
-        it 'contain only one type of statuses'do
+        it 'contain only one type of statuses' do
           expect(statuses.uniq).to eq ['delivered']
         end
       end
@@ -58,7 +58,7 @@ module Cartify
       end
     end
 
-    context "callbacks" do
+    context 'callbacks' do
       it { expect(subject).to callback(:update_subtotal).before(:save) }
       it { expect(subject).to callback(:update_total).before(:save) }
       it { expect(subject).to callback(:connect_to_user).before(:save) }
@@ -99,7 +99,7 @@ module Cartify
         let(:order_item) { FactoryGirl.create(:order_item, product: product, quantity: 2) }
 
         it 'sum all items in order' do
-          subject =  FactoryGirl.build(:order, order_items: [order_item])
+          subject = FactoryGirl.build(:order, order_items: [order_item])
           expect(subject.subtotal.to_f).to eq 7.0
         end
       end

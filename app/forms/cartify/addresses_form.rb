@@ -8,7 +8,9 @@ module Cartify
     def initialize(params = false)
       @save = false
       @params = params
-      @target = Cartify::Order.find_by(id: order_id) || Cartify.user_class.find_by(id: user_id) || Cartify.user_class.new
+      @target = Cartify::Order.find_by(id: order_id) ||
+                Cartify.user_class.find_by(id: user_id) ||
+                Cartify.user_class.new
     end
 
     def save
@@ -34,7 +36,7 @@ module Cartify
       @shipping ||= fresh_shipp
     end
 
-  private
+    private
 
     def user_id
       params.fetch(:user_id, false) || (params[:billing][:user_id] if nested?)

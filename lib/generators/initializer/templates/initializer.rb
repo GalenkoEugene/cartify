@@ -8,4 +8,4 @@ Cartify.empty_cart_path = 'catalog_path'
 # empty_cart_path: it's a route where you will be redirected if empty cart and user try go to checkout
 
 # don't forget add:
-  # mount Cartify::Engine, at: '/'  # into routes.rb file
+# mount Cartify::Engine, at: '/'  # into routes.rb file

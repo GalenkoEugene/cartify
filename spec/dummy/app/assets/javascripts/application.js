@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require cartify/application.js
 //= require_tree .

@@ -1,4 +1,4 @@
-require_dependency "cartify/application_controller"
+require_dependency 'cartify/application_controller'
 
 module Cartify
   class OrderItemsController < ApplicationController
@@ -28,7 +28,7 @@ module Cartify
 
     def update_quantity
       qqty = order_item_params[:quantity].to_i
-      @order_item.quantity= qqty + @order_item.quantity.to_i
+      @order_item.quantity = qqty + @order_item.quantity.to_i
       @order_item
     end
   end

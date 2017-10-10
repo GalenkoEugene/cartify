@@ -32,14 +32,14 @@ RSpec.configure do |config|
   # config.extend  ControllerMacros, type: :controller
   # config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include DeviseRequestSpecHelpers, type: :feature
-  # config.include FormHelpers, type: :feature
-  # config.include Features::SessionHelpers, type: :feature
+  config.include FormHelpers, type: :feature
+  config.include Features::SessionHelpers, type: :feature
   config.include Shoulda::Matchers::ActiveModel, type: :model
   config.include Shoulda::Matchers::ActiveRecord, type: :model
   config.include Shoulda::Callback::Matchers::ActiveModel
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::Webkit::RspecMatchers, type: :feature
-  # config.include InjectSession, type: :feature
+  config.include InjectSession, type: :feature
   # config.include WaitForAjax, type: :feature
   # config.include RedirectBack
   # config.include Selectors

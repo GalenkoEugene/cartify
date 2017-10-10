@@ -6,7 +6,6 @@ module Cartify
 
     def create
       @addresses = Cartify::AddressesForm.new(addresses_params)
-      status = @addresses.save ? :created : :found
       render :index, object: @addresses.errors
     end
 

@@ -13,7 +13,7 @@ module Cartify
     before_validation :set_order_status, on: :create
     before_save :update_subtotal, :update_total, :connect_to_user
 
-    scope :where_status, -> (status_name) { joins(:order_status).where(cartify_order_statuses: { name: status_name }) }
+    scope :where_status, ->(status_name) { joins(:order_status).where(cartify_order_statuses: { name: status_name }) }
     scope :processing_list, -> { joins(:order_status).where(cartify_order_statuses: { name: %i[in_queue in_progress in_delivery] }) }
     scope :processing_order, -> { where_status('in_queue').order('updated_at').last }
     scope :in_progress, -> { where_status('in_progress').first.try(:id) }
@@ -35,18 +35,18 @@ module Cartify
     end
 
     def shipping_price
-      self.delivery.try(:price) || 0.00
+      delivery.try(:price) || 0.00
     end
 
     def finalize
       set_order_status :in_queue
-      self.save!
+      save!
     end
 
     private
 
     def set_order_status(status = :in_progress)
-      self.order_status_id =  Cartify::OrderStatus.find_or_create_by(name: status).id
+      self.order_status_id = Cartify::OrderStatus.find_or_create_by(name: status).id
     end
 
     def update_subtotal

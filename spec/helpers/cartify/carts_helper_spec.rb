@@ -1,17 +1,26 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CartsHelper. For example:
-#
-# describe CartsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 module Cartify
   RSpec.describe CartsHelper, type: :helper do
-    pending "add some examples to (or delete) #{__FILE__}"
+    describe '#add_to_cart' do
+      let(:product) { FactoryGirl.create(:product) }
+
+      it 'generate link "Add to cart" by default' do
+        expect(helper.add_to_cart(product)).to have_link('Add to cart')
+      end
+
+      it 'name can be changed' do
+        expect(helper.add_to_cart(product, 1, 'Bla bla')).to have_link('Bla bla')
+      end
+
+      it 'quantity can be changed' do
+        expect(helper.add_to_cart(product)).to match('=1')
+        expect(helper.add_to_cart(product, 3)).to match('=3')
+      end
+
+      it 'remote: true link' do
+        expect(helper.add_to_cart(product)).to match('data-remote=\"true')
+      end
+    end
   end
 end

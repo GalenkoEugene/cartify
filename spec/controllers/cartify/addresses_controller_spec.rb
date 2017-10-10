@@ -1,10 +1,8 @@
-
 require 'rails_helper'
 
 module Cartify
-  RSpec.describe AddressesController, type: :controller, skip: true do
+  RSpec.describe AddressesController, type: :controller do
     routes { Cartify::Engine.routes }
-
     let!(:user) { FactoryGirl.create(:customer) }
     before { sign_in(user) }
 

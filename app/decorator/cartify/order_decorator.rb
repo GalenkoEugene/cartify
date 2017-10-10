@@ -7,10 +7,10 @@ module Cartify
       in_delivery: I18n.t('order.status.in_delivery'),
       delivered: I18n.t('order.status.delivered'),
       canceled: I18n.t('order.status.canceled')
-    }
+    }.freeze
 
     def complited_at
-      object.updated_at.strftime("%F")
+      object.updated_at.strftime('%F')
     end
 
     def number
@@ -25,7 +25,7 @@ module Cartify
 
     def creation_date
       data = object.updated_at
-      I18n.t("date.month_names")[data.month] + " #{data.strftime("%d, %Y")}"
+      I18n.t('date.month_names')[data.month] + " #{data.strftime('%d, %Y')}"
     end
 
     def sharp_number

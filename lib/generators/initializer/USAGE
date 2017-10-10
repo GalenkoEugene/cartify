@@ -39,6 +39,11 @@ Usage:
 
       # Example:
         link_to cartify.order_items_path(order_item: {quantity: quantity, product_id: product.id}), { method: :post, remote: true }
+  #Shop icon helper
+    shop_icon_quantity
+
   # you need add jQuery and custom styles to app/assets/javaskript/application.js (DON'T DO IT NOW!, initializer make it for you)
     //= require jquery
     //= require cartify/application.js
+    if remote true not working try to add
+      //= require jquery_ujs

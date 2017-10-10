@@ -8,3 +8,4 @@ spec/dummy/tmp/
 tmp/
 Gemfile.lock
 .rake_tasks~
+.rubocop.yml

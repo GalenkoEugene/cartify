@@ -7,6 +7,8 @@ module Cartify
     require 'virtus'
     require 'draper'
     require 'devise'
+    require 'haml-rails'
+    require 'pry-byebug'
     isolate_namespace Cartify
 
     config.generators do |g|
@@ -17,13 +19,14 @@ module Cartify
       g.template_engine :haml
     end
 
-    initializer :cartify, before: :load_config_initializers do |app|
-      config.paths['db/migrate'].expanded.each do |expanded_path|
-        Rails.application.config.paths['db/migrate'] << expanded_path
-      end
-    end
+    # initializer :cartify, before: :load_config_initializers do
 
-    initializer :inject_helpers do |app|
+    #   config.paths['db/migrate'].expanded.each do |expanded_path|
+    #     Rails.application.config.paths['db/migrate'] << expanded_path
+    #   end
+    # end
+
+    initializer :inject_helpers do
       ActiveSupport.on_load :action_controller do
         ::ApplicationController.send(:helper, Cartify::Engine.helpers)
         ::ApplicationController.send(:include, Cartify::CurrentSession)

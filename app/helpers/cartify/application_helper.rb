@@ -7,7 +7,7 @@ module Cartify
 
     def active_class(link_path)
       return '' if request.GET.empty?
-      (link_path.include? request.GET.first.join('=')) ? 'active' : ''
+      link_path.include? request.GET.first.join('=') ? 'active' : ''
     end
 
     def country_name(object)

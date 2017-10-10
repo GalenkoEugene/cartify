@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Cartify
   RSpec.describe CreditCard, type: :model do
-      context 'validations' do
+    context 'validations' do
       it { expect(subject).to validate_presence_of :number }
       it { expect(subject).to validate_presence_of :name }
       it { expect(subject).to validate_presence_of :mm_yy }
@@ -29,7 +29,7 @@ module Cartify
       it { expect(subject).to allow_value('Adam').for(:name) }
       it { expect(subject).to allow_value('Eva').for(:name) }
       it { expect(subject).not_to allow_value('').for(:name) }
-      it { expect(subject).not_to allow_value('looong name '*10).for(:name) }
+      it { expect(subject).not_to allow_value('looong name ' * 10).for(:name) }
       it { expect(subject).not_to allow_value('!@#$%^&*_+').for(:name) }
     end
   end
