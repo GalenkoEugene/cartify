@@ -14,7 +14,7 @@ module Cartify
     private
 
     def coupon
-      @coupon ||= Cartify::Coupon.find_by_name(params[:name])
+      @coupon ||= Cartify::Coupon.find_by(name: params[:name])
     end
   end
 end

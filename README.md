@@ -2,9 +2,13 @@
 Shopping cart with a multi-step checkout, easily mounted into Rails application.
 
 ## Usage
-Run initializer
-  ```ruby
+Run initializer:
+  ```bash
   rails generate initializer
+  ```
+Clone migrations:
+  ```bash
+  rake cartify:install:migrations
   ```
 Define associations in your "User" model:
   ```ruby

@@ -1,6 +1,5 @@
 Cartify.product_class = 'Product'
 Cartify.user_class = 'Customer'
-Cartify.current_user = 'current_customer'
 Cartify.empty_cart_path = 'products_path'
 
 # user_class:      is a owner model name, change it if you have other!

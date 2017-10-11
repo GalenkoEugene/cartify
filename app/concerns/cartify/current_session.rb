@@ -22,12 +22,8 @@ module Cartify::CurrentSession
   end
 
   def cartify_current_user
-    return unless respond_to?(Cartify.current_user)
-    @cartify_current_user ||= public_send(Cartify.current_user)
-  end
-
-  def cartify_set_current_user
-    Cartify::CurrentSession.user = cartify_current_user
+    return unless respond_to?(devise_current_user_method)
+    @cartify_current_user ||= public_send(devise_current_user_method)
   end
 
   def cartify_authenticate_user!
@@ -37,6 +33,10 @@ module Cartify::CurrentSession
 
   private
 
+  def cartify_set_current_user
+    Cartify::CurrentSession.user = cartify_current_user
+  end
+
   def order_id
     order_in_progress&.id || session[:order_id]
   end
@@ -44,5 +44,9 @@ module Cartify::CurrentSession
   def order_in_progress
     return unless cartify_current_user
     cartify_current_user.orders.where_status('in_progress').first
+  end
+
+  def devise_current_user_method
+    "Current#{Cartify.user_class}".underscore
   end
 end

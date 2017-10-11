@@ -3,7 +3,6 @@ require 'cartify/engine'
 module Cartify
   mattr_accessor :product_class
   mattr_accessor :user_class
-  mattr_accessor :current_user
   mattr_accessor :empty_cart_path
 
   def self.product_class

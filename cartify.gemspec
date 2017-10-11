@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.email       = ['Re4port@ukr.net']
   s.homepage    = 'https://github.com/GalenkoNeon/cartify'
   s.summary     = 'Simple shopping cart.'
-  s.description = %q{Shopping cart with a multi-step checkout,
-                     easily mounted into Rails application.}
+  s.description = %q(Shopping cart with a multi-step checkout,
+                     easily mounted into Rails application.)
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']

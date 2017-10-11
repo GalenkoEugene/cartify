@@ -6,7 +6,6 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 Capybara.javascript_driver = :webkit
 Capybara.default_max_wait_time = 5
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

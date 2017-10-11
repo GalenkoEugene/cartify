@@ -33,19 +33,9 @@ module Cartify::Showable
       @order = cartify_current_user.orders.processing_order.decorate
     end
 
-    def fast_authentification!
-      return unless signed_in? and step != :login
-      jump_to(:login) unless signed_in?
-    end
-
     def show_addresses_params # take data from settings if persist
       return { user_id: cartify_current_user.id } if current_order.addresses.empty?
       { order_id: current_order.id }
-    end
-
-    def signed_in?
-      return unless respond_to?("#{Cartify.user_class}SignedIn?".underscore)
-      public_send "#{Cartify.user_class}SignedIn?".underscore
     end
   end
 end

@@ -8,10 +8,10 @@ module Cartify
     scope :prohibited_to_change, -> { where(name: %i[in_progress in_queue]) }
 
     def valid_step?(target)
-      if OrderStatus.find(target).name == 'delivered'
+      if Cartify::OrderStatus.find(target).name == 'delivered'
         name == 'in_delivery'
       else
-        OrderStatus.prohibited_to_change.ids.exclude? target.to_i
+        Cartify::OrderStatus.prohibited_to_change.ids.exclude? target.to_i
       end
     end
   end
