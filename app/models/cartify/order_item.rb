@@ -3,7 +3,7 @@ module Cartify
     belongs_to :product, class_name: Cartify.product_class.to_s
     belongs_to :order
     has_one :order_status, through: :order
-    has_one :category, through: :product # was :book
+    has_one :category, through: :product, class_name: Cartify.product_class.to_s
 
     validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
     validate :product_present

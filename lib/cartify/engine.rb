@@ -8,7 +8,6 @@ module Cartify
     require 'draper'
     require 'devise'
     require 'haml-rails'
-    require 'pry-byebug'
 
     isolate_namespace Cartify
 
