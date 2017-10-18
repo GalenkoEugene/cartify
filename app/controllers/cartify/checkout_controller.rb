@@ -10,7 +10,7 @@ module Cartify
     steps :login, :addresses, :delivery, :payment, :confirm, :complete
 
     def show
-      return redirect_to main_app.send(Cartify.empty_cart_path) if no_items_in_cart?
+      return redirect_to main_app.public_send(Cartify.empty_cart_path) if no_items_in_cart?
       send("show_#{step}") unless step == 'wicked_finish'
       render_wizard
     end
