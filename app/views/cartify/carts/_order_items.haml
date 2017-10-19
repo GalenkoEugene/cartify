@@ -1,0 +1,17 @@
+- @order_items.each do |order_item|
+  %tr
+    %td
+      .general-img-wrap-table
+        = link_to main_app.book_path(order_item.product) do
+          = image_tag img_of(order_item.product), alt: 'design-book', class: 'cart-img-shadow pull-left'
+    %td
+      = link_to main_app.book_path(order_item.product), class: 'text-as-link' do
+        %p.title= order_item.product.title
+    %td
+      %span.font-16.in-gold-500= number_to_currency(order_item.product.price)
+    = render 'cartify/carts/quantity', order_item: order_item
+    %td
+      %span.font-16.in-gold-500= number_to_currency(order_item.total_price)
+    %td
+      = button_to cartify.order_item_path(order_item), { data: { confirm: "Are you sure you wish to delete the book '#{order_item.product.title}' from your cart?" }, method: :delete, remote: true, class: "close general-cart-close", 'aria-label': 'Close' } do
+        %span{'aria-hidden': "true"} &times;

@@ -1,0 +1,16 @@
+%a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+  = order_active_filter
+  %i.fa.fa-angle-down.dropdown-icon.pull-right
+%ul.dropdown-menu
+  %li
+    = link_to t('order.status.in_queue'), orders_path(filter: :in_queue)
+  %li
+    = link_to t('order.status.in_progress'), orders_path(filter: :in_progress)
+  %li
+    = link_to t('order.status.in_delivery'), orders_path(filter: :in_delivery)
+  %li
+    = link_to t('order.status.delivered'), orders_path(filter: :delivered)
+  %li
+    = link_to t('order.status.canceled'), orders_path(filter: :canceled)
+  %li
+    = link_to t('order.status.all'), orders_path

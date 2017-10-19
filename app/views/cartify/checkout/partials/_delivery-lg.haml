@@ -1,0 +1,22 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th.col-method
+        %span.in-grey-600.ml-40= t('delivery.method')
+      %th
+        %span.in-grey-600= t('delivery.days')
+      %th
+        %span.in-grey-600= t('delivery.price')
+  %tbody
+    = f.collection_radio_buttons :delivery_id, @deliveries, :id, :name do |b|
+      %tr
+        %td
+          .form-group.radio.mt-0.mb-0
+            = b.label(class: 'radio-label') do
+              = b.radio_button(class: 'radio-input', hidden: "true")
+              %span.radio-icon
+              %span.radio-text= b.text
+        %td
+          %span= b.object.duration
+        %td
+          %span.font-16.in-gold-500= number_to_currency b.object.price

@@ -1,0 +1,26 @@
+machine:
+  ruby:
+    version:
+      2.4.1
+  environment:
+      DEVISE_SECRET: 'secrets key is here'
+
+dependencies:
+  pre:
+    - gem install bundler
+    - gem install rubygems-bundler
+    - gem regenerate_binstubs
+
+## Customize database setup
+database:
+  override:
+    # replace CircleCI's generated database.yml
+    - cp spec/dummy/config/database.ci.yml spec/dummy/config/database.yml
+    - bundle exec rails app:db:create --trace
+    - bundle exec rails app:db:schema:load --trace
+    # - bundle exec rails db:migrate RAILS_ENV=test --trace
+
+## Customize test commands
+test:
+  override:
+    - bundle exec rspec spec/ --format doc

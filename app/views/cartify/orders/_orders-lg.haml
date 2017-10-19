@@ -1,0 +1,10 @@
+- @orders.each do |order|
+  %tr.clickable-row{ 'data-href': order_path(order) }
+    %td
+      %span.general-order-number= order.number
+    %td
+      %span.in-grey-900.font-16.fw-300= order.complited_at
+    %td
+      %span.font-16.in-grey-900.fw-300= order.status
+    %td
+      %strong.font-16= number_to_currency order.total

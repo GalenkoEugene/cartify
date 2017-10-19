@@ -1,0 +1,7 @@
+%td
+  .input-group
+    = link_to cartify.order_item_path(id: order_item.id, order_item: {quantity: order_item.quantity-1}), class: 'input-link', id: "order_#{order_item.id}_minus", method: :put, remote: true do
+      %i.fa.fa-minus.line-height-40 &nbsp;
+    %input.form-control.quantity-input{type: 'text', value: order_item.quantity}
+    = link_to cartify.order_item_path(id: order_item.id, order_item: {quantity: order_item.quantity+1}), class: 'input-link', id: "order_#{order_item.id}_plus", method: :put, remote: true do
+      %i.fa.fa-plus.line-height-40 &nbsp;

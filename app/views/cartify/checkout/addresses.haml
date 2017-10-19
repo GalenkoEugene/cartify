@@ -1,0 +1,35 @@
+%main.container
+  = render 'cartify/checkout/progress'
+  = form_for @addresses, url: wizard_path, method: :put, class: 'res-mb-100' do |f|
+    .hidden-xs.hidden-sm
+      .row
+        .col-md-5
+          %h3.general-subtitle= t('settings.billing')
+          %p.general-info-text all fields are required
+        .col-md-5.col-md-offset-1
+          %h3.general-subtitle= t('settings.shipping')
+    .row
+      .col-md-5.mb-40
+        .visible-xs.visible-sm
+          %h3.general-subtitle= t('settings.billing')
+          %p.general-info-text all fields are required
+        = f.fields_for @addresses.billing do |ff|
+          - bill_errors = @addresses.billing.errors
+          = render 'cartify/shared/address', ff: ff, errors: bill_errors
+          = f.hidden_field "[billing][order_id]", value: current_order.id
+      .col-md-5.col-md-offset-1.mb-60
+        .visible-xs.visible-sm
+          %h3.general-subtitle= t('settings.shipping')
+        = f.fields_for @addresses.shipping do |ff|
+          - ship_errors = @addresses.shipping.errors
+          = render 'cartify/shared/address', ff: ff, errors: ship_errors
+          = f.hidden_field "[shipping][order_id]", value: current_order.id
+        .form-group.checkbox
+          %label.checkbox-label
+            = f.check_box :use_billing, class: 'checkbox-input', id: 'use_billing', hidden: true
+            %span.checkbox-icon
+              %i.fa.fa-check
+            %span.checkbox-text= t('settings.use_billing')
+    .general-text-align.mb-60
+      = render 'cartify/checkout/order_summary'
+      = f.submit t('checkout.save_and_continue'), class: 'btn btn-default center-block mb-20'

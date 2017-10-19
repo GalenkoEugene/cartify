@@ -1,0 +1,15 @@
+.general-order-wrap
+  .row
+    .col-sm-4
+      .input-group.general-input-group
+        = form_tag cart_path, method: :put
+        = label_tag :name, t('cart.coupon'), class: 'input-label'
+        = text_field_tag(:name, nil, placeholder: t('cart.coupon'), class: 'form-control mb-30')
+        %div
+          %button.btn.btn-primary.mr-5.mb-15.visible-xs-inline-block= t('cart.apply_coupon')
+          = submit_tag t('cart.update'), class: 'btn btn-primary mb-15 res-block'
+    .col-sm-8
+      .res-mr-200.text-center.general-text-right
+        %p.in-gold-500.font-18= t('cart.summary')
+        %table.general-summary-table.general-summary-table-right.general-text-right
+          = render 'cartify/shared/order_summary_numbers'

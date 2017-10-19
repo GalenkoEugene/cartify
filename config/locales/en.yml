@@ -1,0 +1,135 @@
+en:
+  button:
+    orders: 'Orders'
+    settings: 'Settings'
+    back_to_store: 'Back to Store'
+    back_to_orders: 'Back to Orders'
+    change: 'Change'
+    by_now: 'Buy Now'
+    back_to_results: 'Back to results'
+    add_to_cart: 'Add to Cart'
+    all: 'All'
+    get_started: 'Get Started'
+    post: 'Post'
+
+
+  number:
+    currency:
+       format:
+         unit: '€'
+         delimiter: ','
+         separator: '.'
+         precision: 2
+         format: '%u%n'
+
+  cart:
+    cart: 'Cart'
+    product: 'Product'
+    price: 'Price'
+    quantity: 'Quantity'
+    subtotal: 'SubTotal'
+    checkout: 'Checkout'
+    coupon: 'Enter Your Coupon Code'
+    apply_coupon: 'Apply Coupon'
+    update: 'Update cart'
+    summary: 'Order Summary'
+    coupon: 'Coupon'
+    total: 'Order Total'
+
+  settings:
+    settings: 'Settings'
+    address: 'Address'
+    privacy: 'Privacy'
+    billing: 'Billing Address'
+    shipping: 'Shipping Address'
+    use_billing: 'Use Billing Adress'
+    save: 'Save'
+    e-mail: 'Email'
+    enter_e-mail: 'Enter Email'
+    enter_your_e-mail: 'Enter your email'
+    password: 'Password'
+    old_password: 'Old Password'
+    new_password: 'New Password'
+    confirm_password: 'Confirm Password'
+    remove_account: 'Remove Account'
+    please_remove_account: 'Please Remove My Account'
+    im_agree_lost_all_data: 'I understand that all data will be lost'
+    first_name: 'First Name'
+    last_name: 'Last Name'
+    city: 'City'
+    zip: 'Zip'
+    country: 'Country'
+    country_select: 'Select a country'
+  user:
+    seccess_updating_email: 'E-mail was successfully updated.'
+    updated: 'Data was successfully updated'
+  order:
+    my_orders: 'My Orders'
+    number: 'Number'
+    complited_at: 'Completed at'
+    statuss: 'Status'
+    total: 'Total'
+    status:
+      in_progress: 'In Progress'
+      in_queue: 'Waiting for processing'
+      in_delivery: 'In delivery'
+      delivered: 'Delivered'
+      canceled: 'Cenceled'
+      all: 'All Orders'
+
+  delivery:
+    delivery_method: 'Shipping Method'
+    method: 'Method'
+    days: 'Days'
+    price: 'Price'
+    pickup: 'Please, pick up Delivery type!'
+
+  credit_card:
+    tooltip: '3-digit security code, usually found on the back of your card. American Express cards has 4-digit code, located on the front'
+  confirm:
+    shipments: 'Shipments'
+    payment_info: 'Payment Information'
+    edit: 'edit'
+    delivery: 'Delivery'
+    paymant: 'Payment'
+    confirm: 'Confirm'
+    complete: 'Complete'
+    shipping: 'Shipping'
+    item_total: 'Item Total'
+  complete:
+    order: 'Order'
+    thanks: 'Thank You for your Order!'
+    has_been_sent_to: 'An order confirmation has been sent to '
+    book: 'Book'
+  date:
+   month_names: [nil, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+  flash:
+    coupon_applied: 'Coupon was successfully applied'
+    fake_coupon: 'Unavailable coupon, please try another'
+  notice:
+    wrong_password: 'Please enter correct password'
+
+  checkout:
+    save_and_continue: 'Save and Continue'
+    place_order: 'Place Order'
+    cart_number: 'Card Number'
+    credit_card: 'Credit Card'
+    name_on_card: 'Name on Card'
+    mm_yy: 'MM / YY'
+    cvv: 'CVV'
+    returning_customer: 'Returning Customer'
+    or: 'or'
+    login_with_password: 'Log in with password'
+    enter_email: 'Enter Email'
+    new_customer: 'New Customer'
+    quick_register: 'Quick Register'
+    quick_description: "You'll be able to create password later"
+    continue: 'Continue to Checkout'
+    add_to_cart: 'Add to cart'
+    cart: 'Cart'
+
+  validation:
+    cart_number: 'Please enter a valid credit card number'
+    cart_name: 'Allow only letters'
+    mm_yy: 'Mons can be from 01 to 12'
