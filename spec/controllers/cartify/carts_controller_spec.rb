@@ -11,7 +11,7 @@ module Cartify
       end
 
       it 'return success response with show template' do
-        expect(response).to be_success
+        expect(response).to be_successful
         expect(response).to render_template :show
       end
     end
