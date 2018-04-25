@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :order, class: 'Cartify::Order' do
     subtotal 1
     total 1
