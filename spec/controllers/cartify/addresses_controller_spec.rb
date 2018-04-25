@@ -29,7 +29,7 @@ module Cartify
       end
 
       it 'return a success response' do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'render index' do

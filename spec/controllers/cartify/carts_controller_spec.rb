@@ -17,7 +17,7 @@ module Cartify
     end
 
     describe 'POST #update' do
-      let!(:coupon) { FactoryGirl.create(:coupon, name: 'D12345678900000', value: 33.33) }
+      let!(:coupon) { create(:coupon, name: 'D12345678900000', value: 33.33) }
 
       it 'set coupon' do
         expect(controller).to receive(:coupon).at_least(:once)

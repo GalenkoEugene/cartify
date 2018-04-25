@@ -2,11 +2,11 @@ require 'rails_helper'
 
 module Cartify
   RSpec.feature 'End to end checkout process', type: :feature do
-    let(:user) { FactoryGirl.create(:customer) }
+    let(:user) { create(:customer) }
 
     before do
-      FactoryGirl.create(:product)
-      FactoryGirl.create_list(:delivery, 3)
+      create(:product)
+      create_list(:delivery, 3)
     end
 
     it 'allow to pass all steps in checkout', js: true do
