@@ -22,6 +22,10 @@ Clone migrations:
 ```bash
 $ rails cartify:install:migrations
 ```
+Run the migrations:
+```bash
+$ rails db:migrate
+```
 
 If you don't have a User model, generate a simple one:
 ```bash
@@ -30,10 +34,12 @@ $ rails g model user name:string
 
 Define associations in your "User" model:
 ```ruby
-has_many :orders, class_name: 'Cartify::Order', foreign_key: :user_id
-has_one :billing, class_name: 'Cartify::Billing', foreign_key: :user_id
-has_one :shipping, class_name: 'Cartify::Shipping', foreign_key: :user_id
-has_many :addresses, class_name: 'Cartify::Address', foreign_key: :user_id
+class User < ApplicationRecord
+    has_many :orders, class_name: 'Cartify::Order', foreign_key: :user_id
+    has_one :billing, class_name: 'Cartify::Billing', foreign_key: :user_id
+    has_one :shipping, class_name: 'Cartify::Shipping', foreign_key: :user_id
+    has_many :addresses, class_name: 'Cartify::Address', foreign_key: :user_id
+end
 ```
 Configure the Cartify initializer (found in `config/initializers/cartify.rb`)
 ```ruby
@@ -42,7 +48,6 @@ Cartify.user_class = 'User'
 Cartify.empty_cart_path = 'cart_path'
 Cartify.title_attribute = :name
 Cartify.price_attribute = :price
-
 ```
 Mount Cartify as an engine in `config/routes.rb` and make sure you have a `show` action for your product class defined:
 
