@@ -1,5 +1,7 @@
 # Cartify (custom version)
 
+This gem is a resource to be user in the SlowFood Online Challenge from Week 4 of the Craft Academy Coding Bootcamp.
+
 Shopping cart with a multi-step checkout, easily mounted into Rails application.
 
 # Note: The following instructions are WIP and dont include the Checkout functionality!
