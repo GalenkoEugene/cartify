@@ -1,6 +1,8 @@
 Cartify.product_class = 'Product'
 Cartify.user_class = 'Customer'
 Cartify.empty_cart_path = 'products_path'
+Cartify.title_attribute = :title
+Cartify.price_attribute = :price
 
 # user_class:      is a owner model name, change it if you have other!
 # product_class:   is a product model name, change it if you have other!
