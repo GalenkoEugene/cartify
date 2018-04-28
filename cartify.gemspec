@@ -39,4 +39,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'transactional_capybara', '0.2'
   s.add_development_dependency 'rspec-rails', '~> 3.7.2'
   s.add_development_dependency 'sass-rails', '~> 5.0'
+  s.add_development_dependency 'launchy'
 end

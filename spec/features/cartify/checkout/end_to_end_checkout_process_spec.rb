@@ -35,7 +35,6 @@ module Cartify
         fill_in 'addresses_form[shipping][zip]', with: '32158'
         select('Spain', from: 'addresses_form[billing][country]')
         fill_in 'addresses_form[shipping][phone]', with: '+112 34 567 8998'
-
         find('input[name="commit"]').click
       end
 
