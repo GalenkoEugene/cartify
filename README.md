@@ -107,6 +107,9 @@ end
     link_to cartify.order_items_path(order_item: {quantity: 7, product_id: product.id}), 
       { method: :post, remote: true }
    ```
+## ToDo
+* Move away from jQuery - refactor all js code to use vanilla JavaScript only
+* Fix Authentication and OAuth functionality
 
 ## License
 This gem is based on the [initial Cartify gem](https://rubygems.org/gems/cartify/versions/0.1.0).
