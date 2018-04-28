@@ -14,5 +14,9 @@ module Cartify
       country = ISO3166::Country[object.country]
       country.translations[I18n.locale.to_s] || country.name
     end
+
+    def image_for(obj)
+      obj.service_url || 'https://vignette.wikia.nocookie.net/teenage-mutant-ninja-turtles-2012-series/images/f/fd/Pizza_trad_pepperoni.png/revision/latest?cb=20161106191944'
+    end
   end
 end
